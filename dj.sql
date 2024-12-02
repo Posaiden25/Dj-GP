@@ -7,12 +7,30 @@ CREATE TABLE User (
     email VARCHAR(255),
 );
 
-CREATE TABLE Artist(
-  name VARCHAR(255) PRIMARY KEY,
-
+CREATE TABLE Artist (
+    Art_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Art_Name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE
+
+CREATE TABLE Contributor (
+    Collab_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Collab_Type VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE Song (
+    S_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Art_ID INT,
+    Title VARCHAR(255) NOT NULL,
+    Year INT,
+    Kar_file VARCHAR(255),
+    FOREIGN KEY (Art_ID) REFERENCES Artist(Art_ID)
+);
+
+
+
 
 
 
