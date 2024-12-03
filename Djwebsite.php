@@ -13,6 +13,20 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo 'Connection failed: ' . $e->getMessage();
-    exit();
 }
+?>
+<br><br>
+<body>
+        <form method="POST">
+                <label for="username">Enter your Name: </label>
+                <input / type="Text" name="username" id="username">
+                <br>
+                <label for="email">Enter your Email: </label>
+                <input / type="Text" name="email" id="email">
+                <br>
+                <label for="song">Choose your Song: </label>
+<?php
 
+?>
+        </form>
+</body>
