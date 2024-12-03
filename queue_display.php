@@ -57,3 +57,33 @@
         }
     }
     ?>
+ <h1>Karaoke Sign-Up Form</h1>
+    <form method="POST" action="">
+        <label for="username">Enter your Name: </label>
+        <input type="text" name="username" id="username" required>
+        <br><br>
+
+        <label for="email">Enter your Email: </label>
+        <input type="email" name="email" id="email" required>
+        <br><br>
+
+        <label for="song">Choose your Song: </label>
+        <select name="song" id="song" required>
+            <option value="">--Select a Song--</option>
+            <?php foreach ($songs as $song): ?>
+                <option value="<?= htmlspecialchars($song['song_id']); ?>"><?= htmlspecialchars($song['title']); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <br><br>
+
+        <label for="queue_type">Queue Type: </label>
+        <select name="queue_type" id="queue_type" required>
+            <option value="1">Free Queue</option>
+            <option value="2">Priority Queue</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>
