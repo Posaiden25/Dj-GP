@@ -28,10 +28,3 @@ CREATE TABLE Song (
     Kar_file VARCHAR(255),
     FOREIGN KEY (Art_ID) REFERENCES Artist(Art_ID)
 );
-
-
-
-
-
-
-hi
