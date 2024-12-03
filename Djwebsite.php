@@ -34,7 +34,7 @@ try {
                 $songs = $result->fetchAll(PDO::FETCH_ASSOC);
                 foreach($songs as $song) // loops through each song + band combo
                 {
-                        // this should properly add each song as an option but i couldn't get the database to work on m>
+                        // this should properly add each song as an option but i couldn't get the database to work on my end
                         // ill try again later if someone doesn't confirm this works
                         echo "<option value=\"" . song[0] . "\">" . song[1] . " by " . song[2] . "</option>";
                 }
