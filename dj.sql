@@ -53,3 +53,12 @@ CREATE TABLE Queue (
     FOREIGN KEY (user_id) REFERENCES User(user_id),
     FOREIGN KEY (song_id) REFERENCES Song(song_id)
 );
+
+CREATE TABLE PriorityQueue (
+    pq_id INT AUTO_INCREMENT PRIMARY KEY,
+    pq_type INT NOT NULL,
+    user_id INT,
+    song_id INT,
+    FOREIGN KEY (user_id) REFERENCES User(user_id),
+    FOREIGN KEY (song_id) REFERENCES Song(song_id)
+);
