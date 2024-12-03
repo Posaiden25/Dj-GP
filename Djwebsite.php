@@ -25,7 +25,7 @@ try {
                 <input / type="Text" name="email" id="email">
                 <br>
                 <label for="song">Choose your Song: </label>
-
+                <select name="song" id="song">
 <?php
                 // gathers all the songs and puts them in a dropdown list
                 $result = $pdo->query('SELECT song_id,title,band FROM Song');
@@ -37,5 +37,11 @@ try {
                         echo "<option value=\"" . song[0] . "\">" . song[1] . " by " . song[2] . "</option>";
                 }
 ?>
+</select>
+                <br>
+                <label for="priority">Priority queue: </label>
+                <input / type="Radio" name="priority" id="priority">
+                <br>
+                <input / type="Submit">
         </form>
 </body>
