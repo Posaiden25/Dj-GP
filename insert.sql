@@ -159,9 +159,11 @@ INSERT INTO Queue (q_type, user_id, song_id) VALUES
 (2, 7, 7),
 (1, 8, 8),
 (1, 9, 9),
-(2, 10, 10),
+(2, 10, 10);
+/* see comment on SongContributor
 (1, 11, 11),
 (2, 12, 12),
 (1, 13, 13),
 (2, 14, 14),
 (1, 15, 15);
+*/
