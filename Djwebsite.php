@@ -17,6 +17,8 @@ try {
 ?>
 <br><br>
 <body>
+        <h1>Welcome To Karaoke!</h1>
+        <h3>To request a song, fill out the form below</h3>
         <form method="POST">
                 <label for="username">Enter your Name: </label>
                 <input / type="Text" name="username" id="username">
