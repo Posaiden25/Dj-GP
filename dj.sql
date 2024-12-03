@@ -40,6 +40,7 @@ CREATE TABLE SongArtist (
 CREATE TABLE SongContributor (
     song_id INT,
     contributor_id INT,
+    contributor_type VARCHAR(50),
     PRIMARY KEY (song_id, contributor_id),
     FOREIGN KEY (song_id) REFERENCES Song(song_id),
     FOREIGN KEY (contributor_id) REFERENCES Contributor(contributor_id)
