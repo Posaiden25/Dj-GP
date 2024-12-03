@@ -25,8 +25,17 @@ try {
                 <input / type="Text" name="email" id="email">
                 <br>
                 <label for="song">Choose your Song: </label>
-<?php
 
+<?php
+                // gathers all the songs and puts them in a dropdown list
+                $result = $pdo->query('SELECT song_id,title,band FROM Song');
+                $songs = $result->fetchAll(PDO::FETCH_ASSOC);
+                foreach($songs as $song) // loops through each song + band combo
+                {
+                        // this should properly add each song as an option but i couldn't get the database to work on m>
+                        // ill try again later if someone doesn't confirm this works
+                        echo "<option value=\"" . song[0] . "\">" . song[1] . " by " . song[2] . "</option>";
+                }
 ?>
         </form>
 </body>
