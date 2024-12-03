@@ -15,7 +15,7 @@ CREATE TABLE Artist(
 CREATE TABLE Contributor(
   contributor_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  contributer_type VARCHAR(255)
+  contributor_type VARCHAR(255)
 );
 
 CREATE TABLE Song (
