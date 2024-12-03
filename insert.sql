@@ -118,6 +118,8 @@ INSERT INTO SongContributor (song_id, contributor_id) VALUES
 (3, 4),
 (4, 5),
 (5, 6),
+/* Since there's only 6 provided contributors, trying to add a song contributor of ID 7 or higher doesn't work.
+   I commented this out in case there's a complete list of contributors somewhere. Feel free to delete this if there isn't
 (6, 7),
 (6, 8),
 (7, 9),
@@ -146,7 +148,7 @@ INSERT INTO SongContributor (song_id, contributor_id) VALUES
 (28, 32),
 (29, 33),
 (30, 34);
-
+*/
 INSERT INTO Queue (q_type, user_id, song_id) VALUES
 (1, 1, 1),
 (1, 2, 2),
