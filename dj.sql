@@ -47,7 +47,6 @@ CREATE TABLE SongContributor (
 
 CREATE TABLE Queue (
     q_id INT AUTO_INCREMENT PRIMARY KEY,
-    q_type INT NOT NULL,
     user_id INT,
     song_id INT,
     FOREIGN KEY (user_id) REFERENCES User(user_id),
@@ -56,7 +55,6 @@ CREATE TABLE Queue (
 
 CREATE TABLE PriorityQueue (
     pq_id INT AUTO_INCREMENT PRIMARY KEY,
-    pq_type INT NOT NULL,
     user_id INT,
     song_id INT,
     FOREIGN KEY (user_id) REFERENCES User(user_id),
