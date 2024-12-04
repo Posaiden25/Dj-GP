@@ -74,7 +74,7 @@ catch (PDOException $e)
                         }
                 }
                 // checks if the user already exists
-                $result = $pdo->prepare("SELECT user_id IN User WHERE name = :name AND email = :email");
+                $result = $pdo->prepare("SELECT user_id FROM User WHERE name = :name AND email = :email");
                 $result->execute(array('name' => $_POST['name'], 'email' => $_POST['email']));
                 $data = $result->fetch();
                 if (empty($data)) // user does not yet exist...
@@ -82,21 +82,22 @@ catch (PDOException $e)
                         // ... so we add them!
                         $result = $pdo->prepare("INSERT INTO User(name, email) VALUES (:name, :email) ");
                         $result->execute(array('name' => $_POST['name'], 'email' => $_POST['email']));
-                        // TODO: get the new user's ID
+                        // get the new user's ID
+                        $result = $pdo->prepare("SELECT user_id FROM User WHERE name = :name AND email = :email");
+                        $result->execute(array('name' => $_POST['name'], 'email' => $_POST['email']));
+                        $data = $result->fetch();
+                        // little greeting
                         echo "Welcome new user!";
                 }
                 else // user does exist
                 {
-
+                        echo "Welcome back!";
                 }
+                // adds the song to the queue
+                $result = $pdo->prepare("INSERT INTO $queue (user_id, song_id) VALUES (:user, :song)");
+                $result->execute(array('user' => $data['user_id'], 'song' => $_POST['song']));
+                echo "<br>Successfully added song to queue!";
         }
 ?>
-
 </body>
 </html>
-
-
-
-
-
-
