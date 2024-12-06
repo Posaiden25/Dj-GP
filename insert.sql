@@ -117,7 +117,7 @@ INSERT INTO SongContributor (song_id, contributor_id) VALUES
 (2, 3),
 (3, 4),
 (4, 5),
-(5, 6),
+(5, 6);
 INSERT INTO Queue (q_type, user_id, song_id) VALUES
 (1, 1, 1),
 (1, 2, 2),
