@@ -17,7 +17,7 @@ catch (PDOException $e)
 {
     echo 'Connection failed: ' . $e->getMessage();
 }
-        static $signUpPage = "./djwebsite.php"; // the link to the sign up page
+        static $signUpPage = "./karaokeSignUp.php"; // the link to the sign up page
         static $queueColumns = 8; // columns of a standard queue. add one to priority queues
 
         echo "<br><br>\n";
