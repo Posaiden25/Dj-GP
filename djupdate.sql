@@ -21,7 +21,7 @@ try {
     <style>
         /* General page styling */
         body {
-            background-color: #121212; (GRAY)
+            background-color: #787777; (GRAY)
             color: #f0f0f0;
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -36,7 +36,7 @@ try {
             color: #ff6347; /* Tomato color for headers */
         }
         form {
-            background-color: #1e1e1e;
+            background-color: #bf5b49;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
@@ -57,11 +57,18 @@ try {
             background-color: #2b2b2b;
             color: #f0f0f0;
         }
-
+        input[type="number"], select {
+            width: 50%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #2b2b2b;
+            color: #f0f0f0;
+        }
         input[type="radio"] {
             margin-right: 5px;
         }
-
         input[type="submit"] {
             background-color: #ff6347;
             color: #fff;
@@ -75,7 +82,6 @@ try {
         input[type="submit"]:hover {
             background-color: #ff4500; /* Slightly darker red */
         }
-
         .error {
             color: #ff4500;
             margin-top: 10px;
