@@ -96,6 +96,11 @@ try {
 </head>
 <body>
     <div>
+        <form>
+            <input type="submit" value="Search for songs" formaction="./songSearch.php">
+            <input type="submit" value="To the DJ Interface" formaction="./djView.php">
+        </form>
+        
         <h1>Welcome To Karaoke!</h1>
         <h3>To request a song, fill out the form below</h3>
 
