@@ -17,11 +17,17 @@ catch (PDOException $e)
 {
     echo 'Connection failed: ' . $e->getMessage();
 }
-?>
-<br><br>
-<body>
-        <h1>Karaoke DJ Interface</h1>
-<?php
+        static $signUpPage = "./djwebsite.php"; // the link to the sign up page
+        static $queueColumns = 8; // columns of a standard queue. add one to priority queues
+
+        echo "<br><br>\n";
+        echo "<body>\n";
+        echo "<h1>Karaoke DJ Interface</h1>\n";
+
+        // a button to send you to the sign up page
+        echo '<form action="' . $signUpPage . '">';
+        echo '<input type="Submit" value="To the Sign Up Page" /></form>';
+
         // checks if a form was submitted
         if($_SERVER['REQUEST_METHOD'] = "POST")
         {
@@ -45,7 +51,7 @@ catch (PDOException $e)
                         $result->execute(array('id' => $_POST["ID"]));
                         if ($result->rowCount() == 0) // if it's not there
                         {
-                                echo "Invalid option";
+                                echo "Invalid option, did you refresh the page?";
                         }
                         else // deletes it :)
                         {
@@ -58,19 +64,30 @@ catch (PDOException $e)
                 echo "</p>";
         }
         // gathers the data for the priority queue
-        $result = $pdo->query('SELECT PriorityQueue.pq_id AS "ID", User.name AS "Name", User.email AS "Email", Song.title AS "Song Title", Song.genre AS "Genre", Artist.artist_name AS "Artist" FROM PriorityQueue LEFT JOIN User ON PriorityQueue.user_id = User.user_id LEFT JOIN Song ON PriorityQueue.song_id = Song.song_id LEFT JOIN Artist ON Song.artist_id = Artist.artist_id');
+        $result = $pdo->query('SELECT PriorityQueue.pq_id AS "ID", User.name AS "Name", User.email AS "Email", '
+                . 'Song.title AS "Song Title", Song.genre AS "Genre", Artist.artist_name AS "Artist", '
+                . 'PriorityQueue.money AS "Money", Song.karaoke_file AS "File" FROM PriorityQueue '
+                . 'LEFT JOIN User ON PriorityQueue.user_id = User.user_id '
+                . 'LEFT JOIN Song ON PriorityQueue.song_id = Song.song_id '
+                . 'LEFT JOIN Artist ON Song.artist_id = Artist.artist_id '
+                . 'ORDER BY money DESC');
         $priorityQueue = $result->fetchall(PDO::FETCH_ASSOC);
         // gathers the data for the standard queue
-        $result = $pdo->query('SELECT PriorityQueue.pq_id AS "ID", User.name AS "Name", User.email AS "Email", Song.title AS "Song Title", Song.genre AS "Genre", Artist.artist_name AS "Artist" FROM Queue LEFT JOIN User ON Queue.user_id = User.user_id LEFT JOIN Song ON Queue.song_id = Song.song_id LEFT JOIN Artist ON Song.artist_id = Artist.artist_id');
+        $result = $pdo->query('SELECT Queue.q_id AS "ID", User.name AS "Name", User.email AS "Email", '
+                . 'Song.title AS "Title", Song.genre AS "Genre", Artist.artist_name AS "Artist", '
+                . 'Song.karaoke_file AS "File" FROM Queue '
+                . 'LEFT JOIN User ON Queue.user_id = User.user_id '
+                . 'LEFT JOIN Song ON Queue.song_id = Song.song_id '
+                . 'LEFT JOIN Artist ON Song.artist_id = Artist.artist_id');
         $standardQueue = $result->fetchall(PDO::FETCH_ASSOC);
         // prints the two queues
-        printTable($priorityQueue, "Priority Queue", 7, 1);
-        printTable($standardQueue, "Standard Queue", 7, 0);
+        printTable($priorityQueue, "Priority Queue", $queueColumns + 1, 1);
+        printTable($standardQueue, "Standard Queue", $queueColumns, 0);
 
         // prints a table
         function printTable(array &$data, $title, $totalCols, $priority)
         {
-                echo "<table border=2 style=\"float: left\">\n";
+                echo "<p>\n<table border=2>\n";
                 // there's definitely a way to get the column count with just the data but ill worry about that later
                 echo "<tr><th colspan=\"" . $totalCols . "\">" . $title . "</th></tr><tr>";
                 foreach(array_keys($data[0]) as $header) // prints the attributes
@@ -92,7 +109,7 @@ catch (PDOException $e)
                         echo '<input type="Submit" value="Play"></td></form>';
                         echo "</tr>\n";
                 }
-                echo "</tr>\n</table>\n";
+                echo "</tr>\n</table>\n</p>";
         }
         ?>
 
