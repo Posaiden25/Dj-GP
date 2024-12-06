@@ -57,6 +57,7 @@ CREATE TABLE PriorityQueue (
     pq_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     song_id INT,
+    money INT,
     FOREIGN KEY (user_id) REFERENCES User(user_id),
     FOREIGN KEY (song_id) REFERENCES Song(song_id)
 );
