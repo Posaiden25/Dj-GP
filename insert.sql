@@ -6,7 +6,7 @@ INSERT INTO User(name, email) VALUES
 ('Charles', 'charles@gmail.com'),
 ('David', 'david@gmail.com'),
 ('Eve', 'eve@gmail.com'),
-('Wemby', 'Wemby@gmail.com'),
+('Wemby', 'wemby@gmail.com'),
 ('Grace', 'grace@gmail.com'),
 ('Hank', 'hank@gmail.com'),
 ('Ian', 'ian@gmail.com'),
