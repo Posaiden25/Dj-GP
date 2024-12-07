@@ -2,15 +2,15 @@ USE KaraokeDB;
 
 INSERT INTO User(name, email) VALUES
 ('Alice', 'alice@gmail.com'),
-('Bob', 'bob@gmail.com'),
-('Charlie', 'charlie@gmail.com'),
-('Dave', 'dave@gmail.com'),
+('Bobby', 'bobby@gmail.com'),
+('Charles', 'charles@gmail.com'),
+('David', 'david@gmail.com'),
 ('Eve', 'eve@gmail.com'),
-('Frank', 'frank@gmail.com'),
+('Wemby', 'Wemby@gmail.com'),
 ('Grace', 'grace@gmail.com'),
 ('Hank', 'hank@gmail.com'),
-('Ivy', 'ivy@gmail.com'),
-('Jack', 'jack@gmail.com');
+('Ian', 'ian@gmail.com'),
+('Jacky', 'jacky@gmail.com');
 
 INSERT INTO Artist(artist_name) VALUES
 ('The Weeknd'),
