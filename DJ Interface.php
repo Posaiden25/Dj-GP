@@ -160,31 +160,38 @@ catch (PDOException $e)
         // prints a table
         function printTable(array &$data, $title, $totalCols, $priority)
         {
-                echo "<p>\n<table border=2>\n";
-                // style="float: left";
-                // there's definitely a way to get the column count with just the data but whatever
-                echo "<tr><th colspan=\"" . $totalCols . "\">" . $title . "</th></tr><tr>";
-                foreach(array_keys($data[0]) as $header) // prints the attributes
+                if (!empty($data))
                 {
-                        echo "<th>$header</th>\n";
-                }
-                echo "</tr>\n";
-                foreach($data as $row) // prints the data
-                {
-                        echo "<tr>\n";
-                        foreach($row as $col)
+                        echo "<p>\n<table border=2>\n";
+                        // there's definitely a way to get the column count with just the data but whatever
+                        echo "<tr><th colspan=\"" . $totalCols . "\">" . $title . "</th></tr><tr>";
+                        foreach(array_keys($data[0]) as $header) // prints the attributes
                         {
-                                echo "<td>$col</td>\n";
+                                echo "<th>$header</th>\n";
                         }
-                        // provides the form to allow the user to play a song
-                        echo '<td><form method="POST" value="play">';
-                        echo '<input type="hidden" name="ID" value="' . $row["ID"]. '">'; // sends the id
-                        echo '<input type="Hidden" name="priority" value="' . $priority . '">'; // sends whether it's priority
-                        echo '<input type="Submit" value="Play"></td></form>';
                         echo "</tr>\n";
+                        foreach($data as $row) // prints the data
+                        {
+                                echo "<tr>\n";
+                                foreach($row as $col)
+                                {
+                                        echo "<td>$col</td>\n";
+                                }
+                                // provides the form to allow the user to play a song
+                                echo '<td><form method="POST" class="play">';
+                                echo '<input type="hidden" name="ID" value="' . $row["ID"]. '">'; // sends the id
+                                echo '<input type="Hidden" name="priority" value="' . $priority . '">'; // sends whether it's priority
+                                echo '<input type="Submit" value="Play"></td></form>';
+                                echo "</tr>\n";
+                        }
+                        echo "</tr>\n</table>\n</p>";
                 }
-                echo "</tr>\n</table>\n</p>";
+                else
+                {
+                        echo "<p>" . $title . " is empty</p>";
+                }
         }
+
         ?>
 
 </body>
