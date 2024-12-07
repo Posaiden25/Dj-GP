@@ -31,6 +31,7 @@ try {
             align-items: center;
             min-height: 100vh;
             text-align: center;
+            background-image:url("https://substreammagazine.com/wp-content/uploads/2024/05/WILLIAMS_DEADMAU5_-26-1200x800.jpg");
         }
         h1, h3 {
             color: #ff6347; /* Tomato color for headers */
