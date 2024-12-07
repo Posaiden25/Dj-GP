@@ -22,7 +22,7 @@
             margin: 10px;
         }
         input[type="submit"] {
-            color: black;
+            color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 8px;
