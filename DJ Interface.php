@@ -48,6 +48,16 @@
         td {
             text-align: center;
         }
+        table, th, td {
+            border: 1px solid;
+            background-color: #bf5b49;
+            padding: 4px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            margin: auto;
+            margin-top: 15px;
+            font-size: 18px;
+        }
         .error {
             color: #ff6347;
             margin-top: 10px;
