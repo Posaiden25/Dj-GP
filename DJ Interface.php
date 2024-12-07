@@ -8,7 +8,7 @@
             padding: 0;
         }
         h1 {
-            color: black;
+            color: #ff6347;
             font-size: 70px;
             text-align: center;
         }
