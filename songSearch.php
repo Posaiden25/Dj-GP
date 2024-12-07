@@ -14,6 +14,7 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
+            image:url("https://static1.squarespace.com/static/5df0d26ebbdf986d02a31efe/t/65f78a582b861022932ec9c7/1710721624630/2024.03.05_LittleStreetStudio_MARCH24_Photo-23814_FINALEdit_LR.jpg?format=1500w");
         }
         h1, h3 {
             color: #ff6347; /* Tomato color for headers */
