@@ -11,6 +11,7 @@
             color: #ff6347;
             font-size: 70px;
             text-align: center;
+            font: 15px Arial;
         }
         form {
             background-color: #bf5b49;
