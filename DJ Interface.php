@@ -88,7 +88,8 @@ catch (PDOException $e)
         function printTable(array &$data, $title, $totalCols, $priority)
         {
                 echo "<p>\n<table border=2>\n";
-                // there's definitely a way to get the column count with just the data but ill worry about that later
+                // style="float: left";
+                // there's definitely a way to get the column count with just the data but whatever
                 echo "<tr><th colspan=\"" . $totalCols . "\">" . $title . "</th></tr><tr>";
                 foreach(array_keys($data[0]) as $header) // prints the attributes
                 {
