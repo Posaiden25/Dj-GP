@@ -13,7 +13,7 @@
             text-align: center;
         }
         form {
-            background-color: black;
+            background-color: #bf5b49;
             padding: 5px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -58,6 +58,9 @@
             margin-top: 10px;
             text-align: center;
         }
+        .play {
+            width: 60px;
+        }
 </style>
 
 
@@ -70,7 +73,6 @@ $password = '2003Jan31';
 
 try
 {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e)
@@ -164,7 +166,7 @@ catch (PDOException $e)
                                 echo "<td>$col</td>\n";
                         }
                         // provides the form to allow the user to play a song
-                        echo '<td><form method="POST">';
+                        echo '<td><form method="POST" value="play">';
                         echo '<input type="hidden" name="ID" value="' . $row["ID"]. '">'; // sends the id
                         echo '<input type="Hidden" name="priority" value="' . $priority . '">'; // sends whether it's priority
                         echo '<input type="Submit" value="Play"></td></form>';
